@@ -7,20 +7,16 @@ if __name__ == "__main__":
     print("=== Game Data Alchemist ===")
     print()
     print(f"Initial list of players: {players}")
-    players_cap = []
     players_cap = [x.capitalize() for x in players]
     print(f"New list with all names capitalized: {players_cap}")
-    result = []
-    result = [x for x in players if x[0].isupper()]
+    result = [x for x in players if x == x.capitalize()]
     print(f"New list of capitalized names only: {result}")
     print()
-    d = {}
-    d = {x: random.randint(0, 1000) for x in players_cap}
-    print(f"Score dict: {d}")
-    total = sum(d.values())
-    lenght = len(d)
-    media = total / lenght
+    scores = {x: random.randint(0, 1000) for x in players_cap}
+    print(f"Score dict: {scores}")
+    total = sum(scores.values())
+    length = len(scores)
+    media = total / length
     print(f"Score average is {round((media), 2)}")
-    d2 = {}
-    d2 = {k: v for k, v in d.items() if v > media}
-    print(f"High scores: {d2}")
+    high_scores = {k: v for k, v in scores.items() if v > media}
+    print(f"High scores: {high_scores}")
