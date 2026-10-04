@@ -8,8 +8,8 @@ if __name__ == '__main__':
         if len(parts) != 2:
             print(f"Error - invalid parameter '{arg}'")
             continue
-        key: str = parts[0]
-        value_str: str = parts[1]
+        key = parts[0]
+        value_str = parts[1]
         if key in invent:
             print(f"Redundant item '{key}' - discarding")
             continue
@@ -27,7 +27,7 @@ if __name__ == '__main__':
         for key, value in invent.items():
             print(
                 f"Item {key} represents "
-                f"{round((((value / total)) * 100), 1)}%")
+                f"{round((value / total) * 100, 1)}%")
     if not items:
         sys.exit()
     most_item = items[0]
